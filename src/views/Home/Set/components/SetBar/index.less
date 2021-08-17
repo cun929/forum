@@ -1,0 +1,87 @@
+#SetBar {
+    flex: 2;
+
+
+    @media (min-width: 0px) {
+        flex: 0;
+
+    }
+
+    @media (min-width: 576px) {}
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {
+        flex       : 2;
+        margin-left: 20px;
+    }
+
+    @media (min-width: 1200px) {}
+
+    >div {
+        top           : 90px;
+        position      : fixed;
+        width         : 230px;
+        height        : 500px;
+        display       : flex;
+        flex-direction: column;
+
+        >div {
+            &:nth-child(1) {
+                background-color: #fff;
+
+                >div {
+                    padding-left: 20px;
+
+                    &:nth-child(1) {
+                        border-bottom  : 3px solid #eeeeee;
+                        height         : 50px;
+                        display        : flex;
+                        justify-content: flex-start;
+                        color          : #37495f;
+                        align-items    : center;
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4) {
+                        height     : 40px;
+                        line-height: 40px;
+                        color      : #2a2a2a;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                margin-top: 20px;
+                // height: 20px;
+                height    : 80px;
+                display   : flex;
+                flex      : row;
+
+                align-items     : center;
+                background-color: #fff;
+
+                >div {
+
+                    &:nth-child(odd) {
+
+                        flex           : 1;
+                        display        : flex;
+                        flex-direction : column;
+                        justify-content: center;
+                        align-items    : center;
+                        height         : 100%;
+
+                    }
+
+                    &:nth-child(2n) {
+                        background-color: #eeeeee;
+                        width           : 2px;
+                        height          : 80%;
+                    }
+                }
+            }
+        }
+    }
+}

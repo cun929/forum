@@ -1,0 +1,324 @@
+#HeadTitle {
+  height          : 4.5rem;
+  background-color: @HeadTitlebg;
+
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  position      : fixed;
+  width         : 100%;
+  transition    : .5s;
+
+  div {
+    transition: .1s;
+  }
+
+  >div {
+    display       : flex;
+    flex-direction: row;
+    height        : 100%;
+    width         : 100%;
+
+    .tit {
+      display        : flex;
+      flex-direction : row;
+      font-size      : 24px;
+      align-items    : center;
+      flex           : 1;
+      justify-content: center;
+      min-width      : 70px;
+    }
+
+    .body {
+      flex          : 7;
+      display       : flex;
+      flex-direction: row;
+      align-items   : center;
+
+      >div {
+        flex: 1;
+
+        &:nth-child(2) {
+          // 输入框，两个按钮
+          flex          : 4;
+          display       : flex;
+          flex-direction: row;
+          align-items   : center;
+          overflow      : hidden;
+
+          &.a {
+            >div {
+
+              &:nth-child(1) {
+                border: 1px solid @input_a;
+                width : 100%;
+              }
+
+              &:nth-child(2) {
+                width: 0;
+              }
+            }
+
+            >input {
+              width: 20rem;
+            }
+          }
+
+          >div {
+            border-radius: 2px;
+            transition   : .3s;
+            margin-left  : 20px;
+
+            &:nth-child(1) {
+              // 输入框
+              width           : 50%;
+              background-color: @input_b;
+              height          : 40px;
+              display         : flex;
+              justify-content : center;
+              align-items     : center;
+              padding         : 0 10px;
+            }
+
+            &:nth-child(2) {
+              display: flex;
+              width  : 50%;
+
+              >div {
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                  height     : 40px;
+                  line-height: 40px;
+                  text-align : center;
+                  width      : 100px;
+                  cursor     : pointer;
+                }
+
+                &:nth-child(1) {
+                  // 创作者中心
+                  margin          : 0 10px;
+                  background-color: @button_background_a;
+                  color           : @button_color_a;
+                }
+
+                &:nth-child(2) {
+                  // 写文章
+                  background-color: @button_background_b;
+                  color           : @button_color_b;
+                }
+              }
+            }
+
+
+          }
+
+          input {
+            border          : none;
+            background-color: inherit;
+            transition      : 0.5s;
+            width           : 100%;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          flex           : 2;
+          display        : flex;
+          flex-direction : row;
+          justify-content: flex-start;
+          align-items    : center;
+
+          .log {
+            // 登录按钮
+            border         : 1px solid @log_border;
+            height         : 40px;
+            width          : 100px;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            color          : @log_color;
+            cursor         : pointer;
+          }
+
+          .user {
+            display       : flex;
+            flex-direction: row;
+            width         : 60%;
+
+            >div {
+              flex           : 1;
+              display        : flex;
+              justify-content: center;
+              align-items    : center;
+
+              &:nth-child(2) {
+                img {
+                  border-radius: 50px;
+                  width        : 40px;
+                  height       : 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 0px) {
+    .tit {
+      img {
+        display: none;
+      }
+    }
+
+    .body {
+      >div {
+        &:nth-child(1) {
+
+          // 更改下拉的导航条
+          >div {
+            &:nth-child(1) {
+              display: none;
+            }
+
+            &:nth-child(2) {
+              position: relative;
+
+              >div {
+                &:nth-child(1) {
+                  color      : @head_title_xiala_title_color;
+                  height     : 40px;
+                  line-height: 40px;
+                  text-align : center;
+                }
+
+                &:nth-child(2) {
+                  position        : absolute;
+                  display         : flex;
+                  flex-direction  : column;
+                  align-items     : center;
+                  width           : 150%;
+                  background-color: @baise;
+                  border          : 1px solid @head_title_xiala_border;
+                  top             : 50px;
+                  right           : -30px;
+
+                  >a {
+                    &:hover,
+                    &.router-link-exact-active {
+                      color: @head_title_hover_color;
+                    }
+                    width      : 100%;
+                    text-align : center;
+                    height     : 40px;
+                    line-height: 40px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          >div {
+
+            &:nth-child(1),
+            &:nth-child(2) {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 576px) {}
+
+  @media (min-width: 768px) {
+    .body {
+      >div {
+        >div {
+          &:nth-child(2) {
+            >div {
+
+              &:nth-child(1),
+              &:nth-child(2) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .tit {
+      img {
+        width  : 40px;
+        height : 40px;
+        display: block;
+      }
+    }
+
+    .body {
+      >div {
+        // >div {
+        //   &:nth-child(2) {
+        //     >div {
+
+        //       &:nth-child(1),
+        //       &:nth-child(2) {
+        //         font-size: 14px;
+        //       }
+        //     }
+        //   }
+        // }
+
+        &:nth-child(1) {
+          display       : flex;
+          flex-direction: row;
+          flex          : 4;
+
+          >div {
+            &:nth-child(1) {
+              // 两个状态的标题栏
+              display       : flex;
+              flex-direction: row;
+              width         : 100%;
+
+              >a {
+                flex      : 1;
+                text-align: center;
+                font-size : @head_title_font_size;
+                color     : @head-title_color;
+
+                &.router-link-exact-active {
+                  color: @head_title_hover_color;
+                }
+
+                &:hover,
+                &.router-link-exact-active {
+                  color: @head_title_hover_color;
+                }
+              }
+            }
+
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 5rem;
+  }
+}
