@@ -51,16 +51,13 @@
 </template>
 <script setup lang="ts">
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
+import debounce from '@/utils/debounce'
 let bl = ref<boolean>(false)
 // 标题栏伸缩
 let time;
 let scroll = ref<number>(0);
 const func = () => {
-  clearTimeout(time)
-  time = setTimeout(() => {
-    console.log('time')
-    scroll.value = document.documentElement.scrollTop
-  }, 300);
+  debounce(() => { scroll.value = document.documentElement.scrollTop }, 300)
 }
 onMounted(() => {
   window.addEventListener('scroll', func)

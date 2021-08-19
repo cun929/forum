@@ -7,6 +7,7 @@
 <script setup lang="ts">
 import { ref, defineProps, onMounted, watch, onBeforeUnmount } from 'vue'
 // import { onBeforeRouteUpdate } from 'vue-router'
+import debounce from '@/utils/debounce'
 defineProps({
   list: Array
 })
@@ -16,6 +17,7 @@ let on = (e: number): number => (count.value = e)
 let time;
 let scroll = ref<number>(0);
 const func = () => {
+  // debounce(()=>{scroll.value = document.documentElement.scrollTop},300)
   clearTimeout(time)
   time = setTimeout(() => {
     console.log('time')
