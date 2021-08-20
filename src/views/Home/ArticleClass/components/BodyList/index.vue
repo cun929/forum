@@ -18,9 +18,7 @@
                 </div>
                 <div>
                     <i class="iconfont icon-dianzan">123</i>
-
                     <i class="iconfont icon-yanjing">213</i>
-
                     <i class="iconfont icon-pinglun">12312</i>
                 </div>
             </div>
@@ -29,10 +27,8 @@
     </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-window.onscroll = function () {
-    console.log(document.body.scrollHeight)
-}
+import { add } from './index.ts'
+const { top } = add()
 </script>
 <style lang="less">
 @import "./index.less";
