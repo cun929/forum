@@ -22,6 +22,7 @@ export default defineConfig({
   },
   base: './',
   server: {
+    host: '0.0.0.0',
     port: 4000,// 端口号
     open: true,// 启动服务是否打开浏览器
     cors: true,//允许跨域

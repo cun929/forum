@@ -31,7 +31,7 @@
           </div>
         </div>
         <div>
-          <div v-if="log" class="log">登录</div>
+          <div v-if="Img" class="log" @click="log">登录</div>
           <div v-else class="user">
             <div>
               <i class="iconfont icon-icon_news_fill"></i>
@@ -50,8 +50,14 @@
   <!-- <div style="height:4.5rem" :style="top ? 'top:-4.5 rem' : ''"></div> -->
 </template>
 <script setup lang="ts">
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
+import { ref, onMounted, watch, onBeforeUnmount, computed } from 'vue'
 import debounce from '@/utils/debounce'
+import { useStore } from '@/store'
+let { state, commit } = useStore()
+const Img = computed(() => state.img)
+const log = () => {
+  commit('setPop', true)
+}
 let bl = ref<boolean>(false)
 // 标题栏伸缩
 let time;
@@ -63,10 +69,8 @@ onMounted(() => {
   window.addEventListener('scroll', func)
 })
 onBeforeUnmount(() => {
-  console.log('------')
   window.removeEventListener('scroll', func)
 })
-// console.log(list)
 const f = (): boolean => (bl.value = !bl.value)
 let top = ref<boolean>(false)
 watch(scroll, (newscroll, oldscroll) => {

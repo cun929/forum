@@ -1,17 +1,65 @@
 #BodyList {
     margin    : 0 auto;
-    width     : 80%;
     margin-top: 20px;
     display   : flex;
 
+    @media (min-width: 0px) {
+        width: 100%;
+
+        >div {
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: 576px) {}
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {
+        width: 80%;
+
+        >div {
+            &:nth-child(1) {
+                flex  : 5;
+                margin: 0 10px;
+            }
+
+            &:nth-child(2) {
+                display    : block;
+                flex       : 2;
+                margin-left: 20px;
+
+                >div {
+                    height: 400px;
+
+                    &:nth-child(1) {
+                        background-color: red;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: yellow;
+                        position        : fixed;
+                        top             : 92px;
+                        width           : 200px;
+                        transition      : .2s;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {}
+
     >div {
-        background-color: #fff;
+
 
         &:nth-child(1) {
-            flex: 5;
+            background-color: #fff;
 
             >div {
-                margin: 10px;
+
 
                 &:not(&:first-child) {
                     border-top: 1px solid #eeeeee;
@@ -92,10 +140,11 @@
 
                         >i {
                             // margin-right: 10px;
-                            color: #88909a;
-                            width: 60px;
+                            color    : #88909a;
+                            width    : 60px;
                             font-size: 14px;
-                            &:hover{
+
+                            &:hover {
                                 color: #6680ff;
                             }
                         }
@@ -107,8 +156,8 @@
         }
 
         &:nth-child(2) {
-            margin-left        : 20px;
-            flex               : 2;
+
+
             // background-color: yellow;
         }
     }
