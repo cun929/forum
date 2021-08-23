@@ -16,6 +16,7 @@
 </template>
 <script setup lang="ts">
 import { useStore } from '@/store'
+// 更改vuex中的弹窗显影，点击‘x’按钮
 const { commit } = useStore()
 const cl = () => {
     commit('setPop', false)

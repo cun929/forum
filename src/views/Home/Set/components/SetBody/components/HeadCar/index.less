@@ -11,8 +11,21 @@
             text-align: center;
 
             img {
-                width        : 120px;
                 border-radius: 50%;
+            }
+
+            @media (min-width: 0px) {
+                img {
+                    width: 90px;
+                }
+            }
+
+
+            @media (min-width: 992px) {
+
+                img {
+                    width: 120px;
+                }
             }
         }
 
@@ -47,8 +60,8 @@
                             justify-content: flex-end;
 
                             i {
-                                margin: 0 10px;
-                                color : @user_iconfont_color;
+                                margin   : 0 10px;
+                                color    : @user_iconfont_color;
                                 font-size: 22px;
                             }
                         }
@@ -61,8 +74,17 @@
                                 line-height  : 48px;
                                 text-align   : center;
                                 border-radius: 2px;
-                                font-size    : 22px;
-                                color        : @user_zl_color;
+
+                                color: @user_zl_color;
+
+                                @media (min-width: 0px) {
+                                    font-size: 16px;
+                                }
+
+
+                                @media (min-width: 992px) {
+                                    font-size: 22px;
+                                }
                             }
                         }
                     }

@@ -25,13 +25,14 @@
         </div>
         <div>
             <div>1</div>
-            <div :style="t ? 'opacity:1 ;' : 'opacity: 0;'">2</div>
+            <div :style="stl">2</div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import { computed } from 'vue'
 import { lists } from '@/hooks/Home/HeadList'
-const { list, t } = lists()
+const { list, t, s, stl } = lists()
 </script>
 <style lang="less">
 @import "./index.less";

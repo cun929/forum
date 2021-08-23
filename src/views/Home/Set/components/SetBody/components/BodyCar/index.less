@@ -23,11 +23,28 @@
                         text-align: center;
 
                         img {
-                            margin-top   : 20px;
-                            width        : 80px;
-                            border-radius: 50%;
 
+
+                            border-radius: 50%;
                         }
+
+                        @media (min-width: 0px) {
+                            img {
+                                width     : 60px;
+                                margin-top: 30px;
+                            }
+                        }
+
+                        @media (min-width: 768px) {}
+
+                        @media (min-width: 992px) {
+                            img {
+                                width     : 80px;
+                                margin-top: 20px;
+                            }
+                        }
+
+                        @media (min-width: 1200px) {}
                     }
 
                     &:nth-child(2) {
@@ -46,8 +63,8 @@
 
                         >div {
                             margin-top: 3px;
-                            min-width     : 300px;
-                            max-width     : 600px;
+                            min-width : 300px;
+                            max-width : 600px;
 
                             &:nth-child(2) {
                                 color: #abb3c2;

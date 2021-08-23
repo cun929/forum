@@ -26,7 +26,7 @@
             <i class="iconfont icon-sousuo"></i>
           </div>
           <div>
-            <div>创作者中心</div>
+            <div @click="() => { Router.push('/user/uploadArticle') }">创作者中心</div>
             <div>写文章</div>
           </div>
         </div>
@@ -53,7 +53,11 @@
 import { ref, onMounted, watch, onBeforeUnmount, computed } from 'vue'
 import debounce from '@/utils/debounce'
 import { useStore } from '@/store'
+import { useRouter } from 'vue-router'
+const Router = useRouter();
+
 let { state, commit } = useStore()
+// 标题连显示是否登录
 const Img = computed(() => state.img)
 const log = () => {
   commit('setPop', true)
@@ -71,15 +75,19 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', func)
 })
+// 小屏显示，菜单栏下拉
 const f = (): boolean => (bl.value = !bl.value)
+// 监听更改top高度
 let top = ref<boolean>(false)
 watch(scroll, (newscroll, oldscroll) => {
   top.value = (oldscroll - newscroll) < 0
   tp.value = false
 })
+// 标题栏小屏幕变量
 let tit = ref<String>('首页')
 let tp = ref<boolean>(false)
 
+// 更改小屏幕标题栏显示
 const qh = (e: String): String => tit.value = e
 </script>
 <style lang="less">
